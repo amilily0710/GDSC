@@ -75,10 +75,8 @@ class NewsFragment : Fragment() {
                     var cnt = 0
                     val supportAreas = mutableListOf<String>()
                     for (snap in snapshot){
-                       // 해야되는 부분:
                         val location = snap.data["지역"].toString()
                         val age = snap.data["지원규모"].toString()
-//                        Log.d("@@@@@@@@", "$age")
 
                         if ( location.contains(args.location.toString()))
                         {
@@ -87,7 +85,6 @@ class NewsFragment : Fragment() {
                                 if (age.length <= 4)
                                 {
                                     if (args.age.toString() == age.substring(1, 3)){
-                                        Log.d("@@@@@2222222", "$age")
                                         supportAreas.add(snap.data["지원분야"].toString())
                                     }
                                 }
@@ -96,13 +93,11 @@ class NewsFragment : Fragment() {
                                     {
                                         if(args.age >= age.substring(1, 3).toInt())
                                         {
-                                            Log.d("@@@@@111111", "$age")
                                             supportAreas.add(snap.data["지원분야"].toString())
                                         }
                                     }
                                     else{
                                         if (args.age in age.substring(1, 3).toInt()..age.substring(5, 7).toInt()) {
-                                            Log.d("@@@@@333333", "$age")
                                             supportAreas.add(snap.data["지원분야"].toString())
                                         }
                                     }
@@ -111,7 +106,6 @@ class NewsFragment : Fragment() {
                             }
 
                             if(age =="제한없음"){
-                                Log.d("@@@@@제한없음", "$age")
                                 supportAreas.add(snap.data["지원분야"].toString())
                             }
                         }
