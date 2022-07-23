@@ -45,32 +45,14 @@ class SelectPolicyFragment : Fragment() {
                 R.array.location,
                 android.R.layout.simple_list_item_1
             )
-
-                check.setOnClickListener {
-                    var selectedItem = if (cb1.isChecked){
-                        cb1.text.toString()
-                    }else if(cb2.isChecked){
-                        cb2.text.toString()
-                    } else if(cb3.isChecked){
-                        cb3.text.toString()
-                    }else if(cb4.isChecked){
-                        cb4.text.toString()
-                    }else if(cb5.isChecked){
-                        cb5.text.toString()
-                    }else if(cb6.isChecked){
-                        cb6.text.toString()
-                    }else{
-                        ""
-                    }
-                    val action =
-                        SelectPolicyFragmentDirections.actionSelectPolicyFragmentToNavigationHome(
-                            location = locationSpn.selectedItem.toString(),
-                            supportArea = selectedItem
-                        )
-                    findNavController().navigate(action)
-
-                }
-
+            check.setOnClickListener {
+                val action =
+                    SelectPolicyFragmentDirections.actionSelectPolicyFragmentToNavigationHome(
+                        location = locationSpn.selectedItem.toString(),
+                        age = editAgeText.text.toString().toInt()
+                    )
+                findNavController().navigate(action)
+            }
         }
     }
 }

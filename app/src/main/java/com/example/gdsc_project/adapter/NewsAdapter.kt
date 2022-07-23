@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gdsc_project.R
@@ -18,6 +19,7 @@ class NewsAdapter(private val dataset:ArrayList<Select>): RecyclerView.Adapter<N
     class NewsViewHolder(val view : View) : RecyclerView.ViewHolder(view){
         val textTitle: TextView = view.findViewById(R.id.item_title)
         val textCount: TextView = view.findViewById(R.id.item_count)
+
 
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {

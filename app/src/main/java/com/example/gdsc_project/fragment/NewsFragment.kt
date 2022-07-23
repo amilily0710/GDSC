@@ -23,7 +23,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.util.*
 import kotlin.collections.ArrayList
-
+import kotlin.reflect.typeOf
 
 
 class NewsFragment : Fragment() {
@@ -64,7 +64,6 @@ class NewsFragment : Fragment() {
             ?.addOnFailureListener { exception ->
                 Log.d("Users", "get failed with ", exception)
             }
-        Log.d("tst5", "${args.supportArea.toString()}")
         db.collection("po")
             .addSnapshotListener{ snapshot, e ->
                 if (e != null) {
@@ -76,14 +75,46 @@ class NewsFragment : Fragment() {
                     var cnt = 0
                     val supportAreas = mutableListOf<String>()
                     for (snap in snapshot){
-                        // 라디오버튼을 써버리면 메인에서 한개만 뜸. 지원분야를 선택안해도 실행됨
+                       // 해야되는 부분:
                         val location = snap.data["지역"].toString()
-                        val supportArea = snap.data["지원분야"].toString()
-                        if ( location.contains(args.location.toString()) && supportArea.contains(args.supportArea.toString()))
-                        {
-                            supportAreas.add(snap.data["지원분야"].toString())
-                        }
+                        val age = snap.data["지원규모"].toString()
+//                        Log.d("@@@@@@@@", "$age")
 
+                        if ( location.contains(args.location.toString()))
+                        {
+                            if (age !="제한없음")
+                            {
+                                if (age.length <= 4)
+                                {
+                                    if (args.age.toString() == age.substring(1, 3)){
+                                        Log.d("@@@@@2222222", "$age")
+                                        supportAreas.add(snap.data["지원분야"].toString())
+                                    }
+                                }
+                                else{
+                                    if (age.substring(5, 7) == "이상")
+                                    {
+                                        if(args.age >= age.substring(1, 3).toInt())
+                                        {
+                                            Log.d("@@@@@111111", "$age")
+                                            supportAreas.add(snap.data["지원분야"].toString())
+                                        }
+                                    }
+                                    else{
+                                        if (args.age in age.substring(1, 3).toInt()..age.substring(5, 7).toInt()) {
+                                            Log.d("@@@@@333333", "$age")
+                                            supportAreas.add(snap.data["지원분야"].toString())
+                                        }
+                                    }
+                                }
+
+                            }
+
+                            if(age =="제한없음"){
+                                Log.d("@@@@@제한없음", "$age")
+                                supportAreas.add(snap.data["지원분야"].toString())
+                            }
+                        }
                     }
                     for (i in supportAreas.distinct()){
                         cnt = Collections.frequency(supportAreas, i)
