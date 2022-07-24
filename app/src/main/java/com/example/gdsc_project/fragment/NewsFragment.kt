@@ -3,6 +3,7 @@ package com.example.gdsc_project.fragment
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gdsc_project.R
 import com.example.gdsc_project.adapter.NewsAdapter
+import com.example.gdsc_project.adapter.policy
 import com.example.gdsc_project.databinding.FragmentNewsBinding
 import com.example.gdsc_project.model.Policy
 import com.example.gdsc_project.model.Select
@@ -21,9 +23,11 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.item_news.*
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.reflect.typeOf
+import androidx.navigation.ui.navigateUp
 
 
 class NewsFragment : Fragment() {
@@ -117,6 +121,7 @@ class NewsFragment : Fragment() {
                     }
                     binding.possiblePolicy.text = "지원가능한 정책: $possibleCnt"
                     recyclerView.adapter?.notifyDataSetChanged()
+
                 } else {
                     Log.d("NewsFragment", "Current data: null")
                 }
@@ -128,6 +133,7 @@ class NewsFragment : Fragment() {
         binding.policyBtn.setOnClickListener {
             selectPolicy()
         }
+
 
     }
 

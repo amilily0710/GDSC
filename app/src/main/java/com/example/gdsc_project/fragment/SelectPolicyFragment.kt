@@ -15,7 +15,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.gdsc_project.R
 import com.example.gdsc_project.databinding.FragmentSelectPolicyBinding
-import kotlinx.parcelize.Parcelize
+
 
 //@Parcelize
 //data class SelectField(

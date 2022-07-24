@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gdsc_project.R
 import com.example.gdsc_project.model.Policy
@@ -35,7 +36,9 @@ class NewsAdapter(private val dataset:ArrayList<Select>): RecyclerView.Adapter<N
         holder.textTitle.text = item.supportAreas.toString()
         holder.textCount.text = item.count.toString()
 
-
+        holder.itemView.setOnClickListener{
+            it.findNavController().navigate(R.id.action_navigation_home_to_FieldFragment)
+        }
     }
 
 
