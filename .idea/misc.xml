@@ -3,10 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/amili/StudioProjects/GDSC/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/amili/StudioProjects/GDSC/app/src/main/res/layout/activity_main.xml" value="0.24583333333333332" />
+        <entry key="..\:/Users/amili/StudioProjects/GDSC/app/src/main/res/layout/activity_sign_up.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/amili/StudioProjects/GDSC/app/src/main/res/layout/fragment_field.xml" value="0.203125" />
+        <entry key="..\:/Users/amili/StudioProjects/GDSC/app/src/main/res/layout/fragment_my_information.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/amili/StudioProjects/GDSC/app/src/main/res/layout/fragment_news.xml" value="0.2" />
         <entry key="..\:/Users/amili/StudioProjects/GDSC/app/src/main/res/layout/fragment_select_policy.xml" value="0.24583333333333332" />
-        <entry key="..\:/Users/amili/StudioProjects/GDSC/app/src/main/res/layout/item.xml" value="0.11904761904761904" />
+        <entry key="..\:/Users/amili/StudioProjects/GDSC/app/src/main/res/layout/item.xml" value="0.176" />
+        <entry key="..\:/Users/amili/StudioProjects/GDSC/app/src/main/res/layout/item_news.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/kimhongjin/AndroidStudioProjects/GDSC_project/app/src/main/res/drawable-v24/ic_dashboard_black_24dp.xml" value="0.1955" />
         <entry key="..\:/Users/kimhongjin/AndroidStudioProjects/GDSC_project/app/src/main/res/layout/activity_login.xml" value="0.3509963768115942" />
         <entry key="..\:/Users/kimhongjin/AndroidStudioProjects/GDSC_project/app/src/main/res/layout/activity_main.xml" value="0.3509963768115942" />

@@ -10,9 +10,11 @@ import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gdsc_project.R
+import com.example.gdsc_project.fragment.NewsFragmentDirections
 import com.example.gdsc_project.model.Policy
 import com.example.gdsc_project.model.Select
 import com.example.gdsc_project.model.User
+import com.google.protobuf.FieldType
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -36,8 +38,15 @@ class NewsAdapter(private val dataset:ArrayList<Select>): RecyclerView.Adapter<N
         holder.textTitle.text = item.supportAreas.toString()
         holder.textCount.text = item.count.toString()
 
-        holder.itemView.setOnClickListener{
-            it.findNavController().navigate(R.id.action_navigation_home_to_FieldFragment)
+        holder.itemView.setOnClickListener {
+            val action =
+                NewsFragmentDirections
+                    .actionNavigationHomeToFieldFragment(
+                        fieldType = holder.textTitle.text.toString(),
+                        age = item.age.toString(),
+                        location = item.location.toString()
+                    )
+            it.findNavController().navigate(action)
         }
     }
 

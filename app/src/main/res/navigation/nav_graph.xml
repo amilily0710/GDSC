@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_navigation_home_to_FieldFragment"
             app:destination="@id/fieldFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_MyInformationFragment"
+            app:destination="@id/MyInformationFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_notifications"
@@ -41,8 +44,29 @@
             app:destination="@id/navigation_home" />
     </fragment>
     <fragment
+        android:id="@+id/MyInformationFragment"
+        android:name="com.example.gdsc_project.fragment.MyInformationFragment"
+        android:label="fragment_information"
+        tools:layout="@layout/fragment_my_information" />
+    <fragment
         android:id="@+id/fieldFragment"
         android:name="com.example.gdsc_project.fragment.FieldFragment"
         android:label="fragment_field"
-        tools:layout="@layout/fragment_field" />
+        tools:layout="@layout/fragment_field" >
+        <argument
+            android:name="fieldType"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue='""' />
+        <argument
+            android:name="age"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue='""' />
+        <argument
+            android:name="location"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue='""' />
+    </fragment>
 </navigation>

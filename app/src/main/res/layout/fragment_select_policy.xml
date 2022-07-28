@@ -7,11 +7,12 @@
     android:padding="16dp"
     tools:context=".fragment.SelectPolicyFragment">
 
+
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/location_spn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_width="336dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="248dp"
         android:minHeight="48dp"
         android:paddingRight="30dp"
         android:spinnerMode="dropdown"
@@ -20,41 +21,59 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
+    <EditText
+        android:id="@+id/editAgeText"
+        android:layout_width="193dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/check"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/location_spn"
+        app:layout_constraintVertical_bias="0.108"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/check"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="141dp"
+        android:layout_height="58dp"
         android:layout_marginTop="16dp"
+        android:backgroundTint="@color/mint"
         android:text="완료"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.548"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.657"
+        android:textSize="17dp"/>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="56dp"
         android:text="나이"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/location_spn" />
 
-    <EditText
-        android:id="@+id/editAgeText"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="66dp"
-        android:ems="10"
-        android:inputType="number"
-        android:minHeight="48dp"
+        android:text="정보를 입력해주세요."
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/location_spn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/location_spn"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.808" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

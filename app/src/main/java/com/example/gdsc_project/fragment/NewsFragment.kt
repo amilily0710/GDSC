@@ -134,7 +134,6 @@ class NewsFragment : Fragment() {
             selectPolicy()
         }
 
-
     }
 
     override fun onDestroyView() {
@@ -145,6 +144,7 @@ class NewsFragment : Fragment() {
     private fun selectPolicy(){
         findNavController().navigate(R.id.action_navigation_home_to_selectPolicyFragment)
     }
+
 
 
 }
